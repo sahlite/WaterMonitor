@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:orientation="vertical" >
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="14dp"
+	    android:layout_marginRight="14dp"
+	    android:layout_marginTop="4dp"
+	    android:orientation="vertical" >
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="4dp"
+	        android:layout_marginLeft="6dp"
+	        android:orientation="horizontal" >
+
+	        <ImageView
+	            android:id="@+id/iv_location_image"
+	            android:layout_width="72dp"
+	            android:layout_height="72dp"
+	            android:layout_marginLeft="4dp"
+	            android:layout_marginTop="8dp"
+	            android:src="@drawable/logo" />
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="6dp"
+	            android:layout_marginTop="4dp"
+	            android:orientation="vertical" >
+
+	            <ProgressBar
+	                android:id="@+id/pgb_battery_status"
+	                style="@style/BatteryBar"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:progress="7"
+	                android:max="7"
+	                android:layout_weight="1" />
+
+	            <TextView
+	                android:id="@+id/tv_connection"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:text="@string/txt_unkown"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <TextView
+	                android:id="@+id/tv_location"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:text="@string/txt_unkown"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	        </LinearLayout>
+
+	    </LinearLayout>
+
+	    <ProgressBar
+	        android:id="@+id/pgb_monitor_progress"
+	        style="@style/CustomProgressBar"
+	        android:max="5"
+	        android:progress="3"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" />
+
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="14dp"
+	    android:layout_marginRight="14dp"
+	    android:layout_marginTop="4dp"
+	    android:orientation="horizontal" >
+
+	    <Button
+	        android:id="@+id/btn_monitor"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="4dp"
+	        android:layout_marginLeft="6dp"
+	        android:layout_marginTop="4dp"
+	        android:layout_weight="1"
+	        android:text="@string/txt_record"
+	        android:textSize="34sp" />
+
+	    <Button
+	        android:id="@+id/btn_connect"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="4dp"
+	        android:layout_marginLeft="0dp"
+	        android:layout_marginRight="6dp"
+	        android:layout_marginTop="4dp"
+	        android:layout_weight="1"
+	        android:text="@string/txt_connect"
+	        android:textSize="34sp" />
+
+	</LinearLayout>
+
+	<LinearLayout
+	    android:id="@+id/layout_data_panel"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="14dp"
+	    android:layout_marginRight="14dp"
+	    android:layout_marginTop="4dp"
+	    android:orientation="vertical" >
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="4dp"
+	        android:baselineAligned="true"
+	        android:orientation="horizontal"
+	        android:paddingTop="0dp" >
+
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1" >
+
+	            <TextView
+	                android:id="@+id/view_rdo_value"
+	                android:layout_width="140dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:layout_centerInParent="true"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_zero"
+	                android:textSize="@dimen/monitor_value_size" />
+
+	            <TextView
+	                android:id="@+id/view_rdo_sign"
+	                android:layout_width="80dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@id/view_rdo_value"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_rdo_sign" />
+
+	            <TextView
+	                android:id="@+id/view_rdo_unit"
+	                android:layout_width="60dp"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/view_rdo_value"
+	                android:layout_toRightOf="@id/view_rdo_sign"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_rdo_unit" />
+	        </RelativeLayout>
+
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:layout_weight="1" >
+
+	            <TextView
+	                android:id="@+id/view_rdo_sat_value"
+	                android:layout_width="140dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_zero"
+	                android:textSize="@dimen/monitor_value_size" />
+
+	            <TextView
+	                android:id="@+id/view_rdo_sat_sign"
+	                android:layout_width="80dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@id/view_rdo_sat_value"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_rdo_sat_sign" />
+
+	            <TextView
+	                android:id="@+id/view_rdo_sat_unit"
+	                android:layout_width="60dp"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/view_rdo_sat_value"
+	                android:layout_toRightOf="@id/view_rdo_sat_sign"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_rdo_sat_unit" />
+	        </RelativeLayout>
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:baselineAligned="true"
+	        android:orientation="horizontal"
+	        android:paddingBottom="4dp"
+	        android:paddingTop="0dp" >
+
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:paddingBottom="4dp" >
+
+	            <TextView
+	                android:id="@+id/view_temp_value"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_zero"
+	                android:textSize="@dimen/monitor_value_size"
+	                android:width="140dp" />
+
+	            <TextView
+	                android:id="@+id/view_temp_sign"
+	                android:layout_width="80dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@id/view_temp_value"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_temp_sign"
+	                android:width="70dp" />
+
+	            <TextView
+	                android:id="@+id/view_temp_unit"
+	                android:layout_width="60dp"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/view_temp_value"
+	                android:layout_toRightOf="@id/view_temp_sign"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_temp_unit"
+	                android:width="70dp" />
+	        </RelativeLayout>
+
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:layout_weight="1"
+	            android:paddingBottom="4dp" >
+
+	            <TextView
+	                android:id="@+id/view_baro_value"
+	                android:layout_width="140dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_zero"
+	                android:textSize="@dimen/monitor_value_size" />
+
+	            <TextView
+	                android:id="@+id/view_baro_sign"
+	                android:layout_width="70dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@id/view_baro_value"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_baro_sign" />
+
+	            <TextView
+	                android:id="@+id/view_baro_unit"
+	                android:layout_width="70dp"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/view_baro_value"
+	                android:layout_toRightOf="@id/view_baro_sign"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_baro_unit" />
+	        </RelativeLayout>
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="4dp"
+	        android:baselineAligned="true"
+	        android:orientation="horizontal"
+	        android:visibility="gone" >
+
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="14dp"
+	            android:layout_weight="1"
+	            android:background="@color/light_grey" >
+
+	            <TextView
+	                android:id="@+id/view_act_value"
+	                android:layout_width="140dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_zero"
+	                android:textSize="@dimen/monitor_value_size" />
+
+	            <TextView
+	                android:id="@+id/view_act_sign"
+	                android:layout_width="80dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@id/view_act_value"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_act_sign" />
+
+	            <TextView
+	                android:id="@+id/view_act_unit"
+	                android:layout_width="60dp"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/view_act_value"
+	                android:layout_toRightOf="@id/view_act_sign"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_act_unit" />
+	        </RelativeLayout>
+
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:layout_marginRight="14dp"
+	            android:layout_weight="1"
+	            android:background="@color/light_grey" >
+
+	            <TextView
+	                android:id="@+id/view_depth_value"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_zero"
+	                android:textSize="@dimen/monitor_value_size"
+	                android:width="140dp" />
+
+	            <TextView
+	                android:id="@+id/view_depth_sign"
+	                android:layout_width="80dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@id/view_depth_value"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_depth_sign"
+	                android:width="70dp" />
+
+	            <TextView
+	                android:id="@+id/view_depth_unit"
+	                android:layout_width="60dp"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/view_depth_value"
+	                android:layout_toRightOf="@id/view_depth_sign"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_depth_unit"
+	                android:width="70dp" />
+	        </RelativeLayout>
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:baselineAligned="true"
+	        android:orientation="horizontal"
+	        android:paddingTop="4dp"
+	        android:visibility="gone" >
+
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="14dp"
+	            android:layout_weight="1"
+	            android:background="@color/light_grey" >
+
+	            <TextView
+	                android:id="@+id/view_orp_value"
+	                android:layout_width="140dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_zero"
+	                android:textSize="@dimen/monitor_value_size" />
+
+	            <TextView
+	                android:id="@+id/view_orp_sign"
+	                android:layout_width="80dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@id/view_orp_value"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_orp_sign" />
+
+	            <TextView
+	                android:id="@+id/view_orp_unit"
+	                android:layout_width="60dp"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/view_orp_value"
+	                android:layout_toRightOf="@id/view_orp_sign"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_orp_unit" />
+	        </RelativeLayout>
+
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:layout_marginRight="14dp"
+	            android:layout_weight="1"
+	            android:background="@color/light_grey" >
+
+	            <TextView
+	                android:id="@+id/view_ph_value"
+	                android:layout_width="140dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_zero"
+	                android:textSize="@dimen/monitor_value_size" />
+
+	            <TextView
+	                android:id="@+id/view_ph_sign"
+	                android:layout_width="80dp"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@id/view_ph_value"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_ph_sign" />
+
+	            <TextView
+	                android:id="@+id/view_ph_unit"
+	                android:layout_width="60dp"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/view_ph_value"
+	                android:layout_toRightOf="@id/view_ph_sign"
+	                android:paddingLeft="@dimen/activity_horizontal_margin"
+	                android:text="@string/txt_ph_unit" />
+	        </RelativeLayout>
+	    </LinearLayout>
+	</LinearLayout>
+
+</LinearLayout>

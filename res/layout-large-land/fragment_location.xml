@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:orientation="horizontal" >
+    
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginTop="2dp"
+    android:background="@drawable/left_monitor_back"
+    android:orientation="vertical"
+    android:paddingBottom="4dp"
+    android:paddingLeft="4dp"
+    android:paddingRight="8dp"
+    android:paddingTop="4dp" >
+
+    <Button
+        android:id="@+id/btn_create_location"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_create" />
+
+    <ListView
+        android:id="@+id/lv_setting_location_list"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content" >
+
+    </ListView>
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/part_location"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_weight="2"
+    android:orientation="vertical" >
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="6dp"
+       android:layout_marginRight="6dp"
+       android:layout_marginTop="4dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/et_salinity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/txt_unkown" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_description"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/txt_unkown" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp" >
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/txt_unkown"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageButton
+            android:id="@+id/btn_camera"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/icon_camera"
+            android:text="@string/txt_camera" />
+
+        <ImageButton
+            android:id="@+id/btn_image"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/btn_camera"
+            android:src="@drawable/icon_picture"
+            android:text="@string/txt_image" />
+
+        <ImageButton
+            android:id="@+id/btn_gps"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/btn_image"
+            android:src="@drawable/icon_location"
+            android:text="@string/txt_gps" />
+
+        <TextView
+            android:id="@+id/view_latitude_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/btn_gps"
+            android:text="@string/txt_zero" />
+
+        <TextView
+            android:id="@+id/view_latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_gps"
+            android:layout_toLeftOf="@id/view_latitude_value"
+            android:text="@string/txt_latitude" />
+
+        <TextView
+            android:id="@+id/view_longtitude_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/view_latitude_value"
+            android:text="@string/txt_zero" />
+
+        <TextView
+            android:id="@+id/view_longtitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_latitude"
+            android:layout_toLeftOf="@id/view_longtitude_value"
+            android:text="@string/txt_longtitude" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_save" />
+
+</LinearLayout>
+
+</LinearLayout>
